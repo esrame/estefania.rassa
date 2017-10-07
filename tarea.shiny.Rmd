@@ -1,0 +1,39 @@
+---
+title: "Analisis base iris"
+author: "Estefania Rassa Melendez"
+date: "4 Octubre 2017"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+---
+
+## Base irirs
+
+This data set contains geographical informations about 25 counties of Ireland.
+
+
+## Tabla de frecuencias para cada especie
+
+```{r}
+data("iris")
+table(iris$Species)
+```
+
+setosa | versicolor | virginica
+------ | ---------- | ---------
+50 | 50 | 50
+
+
+
+## Grafico de relacion entre el Sepal.Length-Sepal.Width para cada especie
+
+```{r }
+library(ggplot2)
+ggplot(iris, aes(Sepal.Length,Sepal.Width)) +geom_point(aes(colour = factor(Species)))
+```
+
+## Grafico de frecuencias para cada especie
+
+```{r }
+barplot(table(iris$Species))
+```
